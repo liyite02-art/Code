@@ -1,0 +1,82 @@
+# ========== 数据与产物（不提交）==========
+# 本地大体积数据与缓存目录
+/min_data/
+/Daily_data/
+/Index/
+
+# 服务器大体积数据或旧版本缓存目录（与本地合并）
+/source/
+/v1/
+
+# 策略输出产物（包含所有的回测结果、日志、图表等）
+/Strategy/outputs/
+
+# 全局忽略常见的数据文件、模型产物及大体积文件后缀
+*.csv
+*.fea
+*.feather
+*.pkl
+*.parquet
+*.h5
+*.hdf5
+*.mmap
+*.npz
+*.npy
+*.pt
+*.pth
+*.zip
+*.tar
+*.gz
+*.rar
+*.db
+*.sqlite
+
+# ========== Python ==========
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+build/
+dist/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.tox/
+.coverage
+htmlcov/
+
+# ========== Notebook ==========
+.ipynb_checkpoints/
+
+# ========== 独立子模块或包含 .git 的子文件夹（避免误当 submodule）==========
+factorrepositoryrelease/
+lihang-code/
+
+# ========== 环境与密钥（切勿提交）==========
+.env
+.env.*
+!.env.example
+.ssh/
+*.pem
+id_ed25519*
+id_rsa*
+*.key
+*id_ed25519*
+*USERPROFILE*/
+**/*USERPROFILE*
+
+# ========== 编辑器与系统 ==========
+.idea/
+.vscode/
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+*~
+
+# ========== 平台/缓存 ==========
+.autodl/
