@@ -6,8 +6,8 @@ from pathlib import Path
 import datetime as dt
 
 # ── 根目录 ──────────────────────────────────────────────────────────────
-PROJECT_ROOT = Path("D:/Quantitative_Investment/Strategy")
-DATA_ROOT = Path("D:/Quantitative_Investment")
+PROJECT_ROOT = Path("/root/autodl-tmp/Strategy")
+DATA_ROOT = Path("/root/autodl-tmp")
 
 # ── 原始数据路径 ────────────────────────────────────────────────────────
 MIN_DATA_DIR = DATA_ROOT / "min_data"          # 分钟频: {year}/{YYYYMMDD}.fea
@@ -19,6 +19,11 @@ LABEL_OUTPUT_DIR = OUTPUT_DIR / "labels"
 FACTOR_OUTPUT_DIR = OUTPUT_DIR / "factors"
 SCORE_OUTPUT_DIR = OUTPUT_DIR / "scores"
 BT_RESULT_DIR = OUTPUT_DIR / "bt_results"
+
+# pipeline_train_score_backtest.ipynb：OOS 冻结、仅用 train∪val 滚动训练时的产出目录。
+# 与 main.ipynb 在 SCORE_OUTPUT_DIR 根目录下直接落盘 SCORE_xgb_*.fea、rolling_model.pkl 等区分，避免覆盖。
+PIPELINE_HOLDOUT_SCORE_DIR = SCORE_OUTPUT_DIR / "pipeline_holdout"
+PIPELINE_HOLDOUT_BT_DIR = BT_RESULT_DIR / "pipeline_holdout"
 
 # ── 样本内外划分 ────────────────────────────────────────────────────────
 # 注意: TRAIN/VAL 闭区间; 须与 build_panel 实际有数据的 TRADE_DATE 有交集。
